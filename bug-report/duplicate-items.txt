@@ -1,7 +1,8 @@
 Bug Report: Duplicate Todo Items Appear after Quickly Adding Tasks
 
 Summary:
-A user reported an issue where rapidly adding multiple todos sometimes results in duplicate items appearing. Deleting one instance of the todo can also cause multiple instances to disappear unexpectedly.
+A user reported an issue where rapidly adding multiple todos sometimes results in duplicate items appearing.  
+Deleting one instance of the todo can also cause multiple instances to disappear unexpectedly.
 
 User Steps:
 1. Type a todo like "Buy groceries."
