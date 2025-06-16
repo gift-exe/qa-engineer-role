@@ -1,24 +1,18 @@
-// @vitest-environment node
-
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
+import { nextTick } from 'vue'
 import Todo from '../../src/components/Todo.vue'
-import { TextEncoder, TextDecoder } from 'util'
-
-global.TextEncoder = TextEncoder
-global.TextDecoder = TextDecoder
 
 describe('Todo.vue', () => {
   it('computed: filteredTodos returns only short todos', async () => {
     const wrapper = mount(Todo)
     
-    await wrapper.setData({
-      todos: [
+    wrapper.vm.todos = [
         { id: 1, text: 'short' },
         { id: 2, text: 'this is very long' }
-      ],
-      filter: 'short'
-    })
+    ]
+    wrapper.vm.filter = 'short'
+    await nextTick()
 
     const items = wrapper.vm.filteredTodos
     expect(items.length).toBe(1)

@@ -1,8 +1,5 @@
-import { defineConfig } from 'vitest/config'
+// vitest.setup.js
+import { TextEncoder, TextDecoder } from 'util'
 
-export default defineConfig({
-  test: {
-    environment: 'jsdom',
-    globals: true,
-  }
-})
+global.TextEncoder = TextEncoder
+global.TextDecoder = TextDecoder
